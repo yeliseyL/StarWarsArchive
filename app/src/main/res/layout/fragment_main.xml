@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.MainFragment">
+
+    <Button
+        android:id="@+id/people_btn"
+        android:text="People"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/planets_btn"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:text="Planets"
+        app:layout_constraintStart_toStartOf="@+id/people_btn"
+        app:layout_constraintTop_toBottomOf="@+id/people_btn" />
+
+    <Button
+        android:id="@+id/films_btn"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:text="Films"
+        app:layout_constraintStart_toStartOf="@+id/planets_btn"
+        app:layout_constraintTop_toBottomOf="@+id/planets_btn" />
+
+    <Button
+        android:id="@+id/species_btn"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:text="Species"
+        app:layout_constraintStart_toStartOf="@+id/films_btn"
+        app:layout_constraintTop_toBottomOf="@+id/films_btn" />
+
+    <Button
+        android:id="@+id/vehicles_btn"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:text="Vehicles"
+        app:layout_constraintStart_toStartOf="@+id/species_btn"
+        app:layout_constraintTop_toBottomOf="@+id/species_btn" />
+
+    <Button
+        android:id="@+id/starships_btn"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:text="Starships"
+        app:layout_constraintStart_toStartOf="@+id/vehicles_btn"
+        app:layout_constraintTop_toBottomOf="@+id/vehicles_btn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
