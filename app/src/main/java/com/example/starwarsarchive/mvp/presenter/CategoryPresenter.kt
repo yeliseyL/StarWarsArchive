@@ -1,7 +1,7 @@
 package com.example.starwarsarchive.mvp.presenter
 
 import com.example.starwarsarchive.mvp.model.Categories
-import com.example.starwarsarchive.mvp.model.entity.ISWItem
+import com.example.starwarsarchive.mvp.model.entity.interfaces.ISWItem
 import com.example.starwarsarchive.mvp.model.repo.ISWItemsRepo
 import com.example.starwarsarchive.mvp.presenter.list.ICategoryListPresenter
 import com.example.starwarsarchive.mvp.view.CategoryView
