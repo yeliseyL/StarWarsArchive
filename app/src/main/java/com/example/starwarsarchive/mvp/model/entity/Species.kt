@@ -17,8 +17,20 @@ class Species(
         @Expose val hair_colors: String,
         @Expose val homeworld: String,
         @Expose val language: String,
-        @Expose val name: String,
+        @Expose override val name: String,
         @Expose val people: List<String>,
         @Expose val skin_colors: String,
         @Expose val url: String
-): Parcelable
+): Parcelable, ISWItem {
+        override fun toString() =
+                "Name: $name\n" +
+                "Average height: $average_height\n" +
+                "Average lifespan: $average_lifespan\n" +
+                "Classification: $classification\n" +
+                "Designation: $designation\n" +
+                "Eye colors: $eye_colors\n" +
+                "Hair colors: $hair_colors\n" +
+                "Homeworld: $homeworld\n" +
+                "Language: $language\n" +
+                "Skin colors: $skin_colors\n"
+}

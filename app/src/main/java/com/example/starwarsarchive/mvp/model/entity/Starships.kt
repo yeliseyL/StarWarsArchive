@@ -19,9 +19,24 @@ class Starships(
         @Expose val manufacturer: String,
         @Expose val max_atmosphering_speed: String,
         @Expose val model: String,
-        @Expose val name: String,
+        @Expose override val name: String,
         @Expose val passengers: String,
         @Expose val pilots: List<String?>,
         @Expose val starship_class: String,
         @Expose val url: String
-): Parcelable
+): Parcelable, ISWItem {
+        override fun toString() =
+                "Name: $name\n" +
+                "Model: $model\n" +
+                "MGLT: $MGLT\n" +
+                "Cargo capacity: $cargo_capacity\n" +
+                "Consumables: $consumables\n" +
+                "Cost in credits: $cost_in_credits\n" +
+                "Crew: $crew\n" +
+                "Hyperdrive rating: $hyperdrive_rating\n" +
+                "Length: $length\n" +
+                "Manufacturer: $manufacturer\n" +
+                "Max atmosphering speed: $max_atmosphering_speed\n" +
+                "Passengers: $passengers\n" +
+                "Starship class: $starship_class\n"
+}

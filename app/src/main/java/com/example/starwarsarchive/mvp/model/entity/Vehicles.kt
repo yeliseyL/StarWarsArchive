@@ -17,9 +17,22 @@ class Vehicles(
         @Expose val manufacturer: String,
         @Expose val max_atmosphering_speed: String,
         @Expose val model: String,
-        @Expose val name: String,
+        @Expose override val name: String,
         @Expose val passengers: String,
         @Expose val pilots: List<String?>,
         @Expose val url: String,
         @Expose val vehicle_class: String
-) : Parcelable
+) : Parcelable, ISWItem {
+        override fun toString() =
+                "Name: $name\n" +
+                "Model: $model\n" +
+                "Cargo capacity: $cargo_capacity\n" +
+                "Consumables: $consumables\n" +
+                "Cost in credits: $cost_in_credits\n" +
+                "Crew: $crew\n" +
+                "Length: $length\n" +
+                "Manufacturer: $manufacturer\n" +
+                "Max atmosphering speed: $max_atmosphering_speed\n" +
+                "Passengers: $passengers\n" +
+                "Vehicle class: $vehicle_class\n"
+}

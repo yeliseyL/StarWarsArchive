@@ -1,27 +1,16 @@
-package com.example.starwarsarchive.mvp.model.api
+package com.example.starwarsarchive.mvp.model.repo
 
+import com.example.starwarsarchive.mvp.model.Categories
 import com.example.starwarsarchive.mvp.model.entity.*
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
-import retrofit2.http.Query
 
-interface IDataSource {
-    @GET("people")
+interface ISWItemsRepo {
+//    fun getItems(category: Categories): Single<SWItemResult>
     fun getPeople(): Single<PeopleResult>
-
-    @GET("planets")
     fun getPlanets(): Single<PlanetsResult>
-
-    @GET("films")
     fun getFilms(): Single<FilmsResult>
-
-    @GET("species")
     fun getSpecies(): Single<SpeciesResult>
-
-    @GET("vehicles")
     fun getVehicles(): Single<VehiclesResult>
-
-    @GET("starships")
     fun getStarships(): Single<StarshipsResult>
-
 }

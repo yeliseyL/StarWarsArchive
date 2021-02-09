@@ -20,4 +20,14 @@ class Films(
         @Expose val title: String,
         @Expose val url: String,
         @Expose val vehicles: List<String>
-) : Parcelable
+) : Parcelable, ISWItem {
+        override val name: String
+                get() = title
+
+        override fun toString() =
+                "Title: $name\n" +
+                "Release date: $release_date\n" +
+                "Director: $director\n" +
+                "Producer: $producer\n" +
+                "Opening crawl: $opening_crawl\n"
+}

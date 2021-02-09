@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.CategoryFragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_items"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Category fragment" />
+        android:paddingTop="16dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        tools:context=".ui.CategoryFragment"
+        tools:listitem="@layout/item_item"/>
 
-</FrameLayout>
+</LinearLayout>

@@ -1,6 +1,6 @@
 package com.example.starwarsarchive.mvp.presenter
 
-import android.util.Log
+import com.example.starwarsarchive.mvp.model.Categories
 import com.example.starwarsarchive.mvp.view.MainFragmentView
 import com.example.starwarsarchive.navigation.Screens
 import moxy.MvpPresenter
@@ -17,8 +17,7 @@ class MainFragmentPresenter : MvpPresenter<MainFragmentView>() {
         viewState.init()
     }
 
-    fun navigateToCategory() {
-        Log.d("Navigate to category", "Navigate to category")
-        router.navigateTo(Screens.CategoryScreen())
+    fun navigateToCategory(category: Categories) {
+        router.navigateTo(Screens.CategoryScreen(category))
     }
 }

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.starwarsarchive.App
 import com.example.starwarsarchive.R
+import com.example.starwarsarchive.mvp.model.Categories
 import com.example.starwarsarchive.mvp.presenter.MainFragmentPresenter
 import com.example.starwarsarchive.mvp.view.MainFragmentView
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -31,12 +32,12 @@ class MainFragment : MvpAppCompatFragment(), MainFragmentView {
     }
 
     override fun init() {
-        people_btn.setOnClickListener { presenter.navigateToCategory() }
-        planets_btn.setOnClickListener { presenter.navigateToCategory() }
-        films_btn.setOnClickListener { presenter.navigateToCategory() }
-        species_btn.setOnClickListener { presenter.navigateToCategory() }
-        vehicles_btn.setOnClickListener { presenter.navigateToCategory() }
-        starships_btn.setOnClickListener { presenter.navigateToCategory() }
+        people_btn.setOnClickListener { presenter.navigateToCategory(Categories.PEOPLE) }
+        planets_btn.setOnClickListener { presenter.navigateToCategory(Categories.PLANETS) }
+        films_btn.setOnClickListener { presenter.navigateToCategory(Categories.FILMS ) }
+        species_btn.setOnClickListener { presenter.navigateToCategory(Categories.SPECIES) }
+        vehicles_btn.setOnClickListener { presenter.navigateToCategory(Categories.VEHICLES) }
+        starships_btn.setOnClickListener { presenter.navigateToCategory(Categories.STARSHIPS) }
     }
 
 

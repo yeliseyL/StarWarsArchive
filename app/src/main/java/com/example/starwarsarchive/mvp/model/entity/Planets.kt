@@ -12,7 +12,7 @@ class Planets(
         @Expose val edited: String,
         @Expose val films: List<String>,
         @Expose val gravity: String,
-        @Expose val name: String,
+        @Expose override val name: String,
         @Expose val orbital_period: String,
         @Expose val population: String,
         @Expose val residents: List<String>,
@@ -20,4 +20,15 @@ class Planets(
         @Expose val surface_water: String,
         @Expose val terrain: String,
         @Expose val url: String
-) : Parcelable
+) : Parcelable, ISWItem {
+        override fun toString() =
+                "Name: $name\n" +
+                "Climate: $climate\n" +
+                "Diameter: $diameter\n" +
+                "Gravity: $gravity\n" +
+                "Orbital period: $orbital_period\n" +
+                "Population: $population\n" +
+                "Rotation period: $rotation_period\n" +
+                "Surface_water: $surface_water\n" +
+                "Terrain: $terrain\n"
+}
