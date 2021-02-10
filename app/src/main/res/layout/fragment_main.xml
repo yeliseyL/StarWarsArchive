@@ -6,17 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.MainFragment">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/people_btn"
-        android:text="People"
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_marginTop="32dp"
+        android:text="People"
+        android:theme="@style/AppTheme.Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:theme="@style/AppTheme.Button"
         android:id="@+id/planets_btn"
         android:layout_width="300dp"
         android:layout_height="80dp"
@@ -25,7 +27,8 @@
         app:layout_constraintStart_toStartOf="@+id/people_btn"
         app:layout_constraintTop_toBottomOf="@+id/people_btn" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:theme="@style/AppTheme.Button"
         android:id="@+id/films_btn"
         android:layout_width="300dp"
         android:layout_height="80dp"
@@ -34,7 +37,8 @@
         app:layout_constraintStart_toStartOf="@+id/planets_btn"
         app:layout_constraintTop_toBottomOf="@+id/planets_btn" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:theme="@style/AppTheme.Button"
         android:id="@+id/species_btn"
         android:layout_width="300dp"
         android:layout_height="80dp"
@@ -43,7 +47,8 @@
         app:layout_constraintStart_toStartOf="@+id/films_btn"
         app:layout_constraintTop_toBottomOf="@+id/films_btn" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:theme="@style/AppTheme.Button"
         android:id="@+id/vehicles_btn"
         android:layout_width="300dp"
         android:layout_height="80dp"
@@ -52,7 +57,8 @@
         app:layout_constraintStart_toStartOf="@+id/species_btn"
         app:layout_constraintTop_toBottomOf="@+id/species_btn" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:theme="@style/AppTheme.Button"
         android:id="@+id/starships_btn"
         android:layout_width="300dp"
         android:layout_height="80dp"
