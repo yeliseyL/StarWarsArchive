@@ -1,6 +1,5 @@
 package com.example.starwarsarchive.mvp.model.repo.retrofit
 
-import com.example.starwarsarchive.mvp.model.Categories
 import com.example.starwarsarchive.mvp.model.api.IDataSource
 import com.example.starwarsarchive.mvp.model.entity.*
 import com.example.starwarsarchive.mvp.model.repo.ISWItemsRepo

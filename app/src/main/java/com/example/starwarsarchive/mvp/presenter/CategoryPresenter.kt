@@ -1,9 +1,6 @@
 package com.example.starwarsarchive.mvp.presenter
 
 import com.example.starwarsarchive.mvp.model.Categories
-import com.example.starwarsarchive.mvp.model.entity.People
-import com.example.starwarsarchive.mvp.model.entity.PeopleResult
-import com.example.starwarsarchive.mvp.model.entity.PlanetsResult
 import com.example.starwarsarchive.mvp.model.entity.interfaces.ISWItem
 import com.example.starwarsarchive.mvp.model.entity.interfaces.ISWItemResult
 import com.example.starwarsarchive.mvp.model.repo.ISWItemsRepo
@@ -13,8 +10,6 @@ import com.example.starwarsarchive.mvp.view.list.IItemView
 import com.example.starwarsarchive.navigation.Screens
 import io.reactivex.rxjava3.core.Scheduler
 import io.reactivex.rxjava3.core.Single
-import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.observers.DisposableSingleObserver
 import moxy.MvpPresenter
 import ru.terrakok.cicerone.Router
 import javax.inject.Inject
