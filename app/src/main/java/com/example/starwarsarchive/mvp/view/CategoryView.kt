@@ -2,10 +2,12 @@ package com.example.starwarsarchive.mvp.view
 
 import moxy.MvpView
 import moxy.viewstate.strategy.AddToEndSingleStrategy
+import moxy.viewstate.strategy.AddToEndStrategy
 import moxy.viewstate.strategy.StateStrategyType
 
-@StateStrategyType(AddToEndSingleStrategy::class)
+@StateStrategyType(AddToEndStrategy::class)
 interface CategoryView : MvpView {
     fun init()
     fun updateList()
+    fun toggleProgress(inProgress: Boolean)
 }

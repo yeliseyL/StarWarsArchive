@@ -53,4 +53,12 @@ class CategoryFragment : MvpAppCompatFragment(), CategoryView {
     override fun updateList() {
         adapter?.notifyDataSetChanged()
     }
+
+    override fun toggleProgress(inProgress: Boolean) {
+        when (inProgress) {
+            true -> fetch_progress.visibility = View.VISIBLE
+            false -> fetch_progress.visibility = View.GONE
+        }
+    }
+
 }

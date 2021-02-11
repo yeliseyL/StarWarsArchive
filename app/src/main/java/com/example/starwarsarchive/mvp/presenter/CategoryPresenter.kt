@@ -8,9 +8,12 @@ import com.example.starwarsarchive.mvp.view.CategoryView
 import com.example.starwarsarchive.mvp.view.list.IItemView
 import com.example.starwarsarchive.navigation.Screens
 import io.reactivex.rxjava3.core.Scheduler
+import io.reactivex.rxjava3.subjects.PublishSubject
+import io.reactivex.rxjava3.subjects.Subject
 import moxy.MvpPresenter
 import ru.terrakok.cicerone.Router
 import javax.inject.Inject
+
 
 class CategoryPresenter(private val category: Categories) : MvpPresenter<CategoryView>() {
 
@@ -44,24 +47,26 @@ class CategoryPresenter(private val category: Categories) : MvpPresenter<Categor
         viewState.init()
         loadData()
 
-        categoryListPresenter.itemClickListener = {itemView ->
+        categoryListPresenter.itemClickListener = { itemView ->
             val item = categoryListPresenter.items[itemView.pos]
             router.navigateTo(Screens.DetailsScreen(item.toString()))
         }
     }
 
     private fun loadData() {
+        viewState.toggleProgress(true)
         when(category) {
             Categories.PEOPLE -> itemsRepo.getPeople()
             Categories.PLANETS -> itemsRepo.getPlanets()
             Categories.STARSHIPS -> itemsRepo.getStarships()
             Categories.SPECIES -> itemsRepo.getSpecies()
-            Categories.VEHICLES ->  itemsRepo.getVehicles()
+            Categories.VEHICLES -> itemsRepo.getVehicles()
             Categories.FILMS -> itemsRepo.getFilms()
         }.observeOn(mainThreadScheduler)
                 .subscribe({ items ->
                     categoryListPresenter.items.clear()
                     categoryListPresenter.items.addAll(items.results)
+                    viewState.toggleProgress(false)
                     viewState.updateList()
                 }, {
                     println("Error: ${it.message}")
