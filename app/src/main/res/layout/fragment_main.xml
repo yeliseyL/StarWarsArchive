@@ -6,64 +6,74 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.MainFragment">
 
-    <androidx.appcompat.widget.AppCompatButton
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/stars_bg" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/people_btn"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:layout_marginTop="32dp"
         android:text="People"
         android:theme="@style/AppTheme.Button"
+        app:layout_constraintBottom_toTopOf="@+id/planets_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_chainStyle="spread" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:theme="@style/AppTheme.Button"
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/planets_btn"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:layout_marginTop="16dp"
         android:text="Planets"
+        android:theme="@style/AppTheme.Button"
+        app:layout_constraintBottom_toTopOf="@+id/films_btn"
         app:layout_constraintStart_toStartOf="@+id/people_btn"
         app:layout_constraintTop_toBottomOf="@+id/people_btn" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:theme="@style/AppTheme.Button"
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/films_btn"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:layout_marginTop="16dp"
         android:text="Films"
+        android:theme="@style/AppTheme.Button"
+        app:layout_constraintBottom_toTopOf="@+id/species_btn"
         app:layout_constraintStart_toStartOf="@+id/planets_btn"
         app:layout_constraintTop_toBottomOf="@+id/planets_btn" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:theme="@style/AppTheme.Button"
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/species_btn"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:layout_marginTop="16dp"
         android:text="Species"
+        android:theme="@style/AppTheme.Button"
+        app:layout_constraintBottom_toTopOf="@+id/vehicles_btn"
         app:layout_constraintStart_toStartOf="@+id/films_btn"
         app:layout_constraintTop_toBottomOf="@+id/films_btn" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:theme="@style/AppTheme.Button"
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/vehicles_btn"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:layout_marginTop="16dp"
         android:text="Vehicles"
+        android:theme="@style/AppTheme.Button"
+        app:layout_constraintBottom_toTopOf="@+id/starships_btn"
         app:layout_constraintStart_toStartOf="@+id/species_btn"
         app:layout_constraintTop_toBottomOf="@+id/species_btn" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:theme="@style/AppTheme.Button"
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/starships_btn"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:layout_marginTop="16dp"
         android:text="Starships"
+        android:theme="@style/AppTheme.Button"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/vehicles_btn"
         app:layout_constraintTop_toBottomOf="@+id/vehicles_btn" />
 
