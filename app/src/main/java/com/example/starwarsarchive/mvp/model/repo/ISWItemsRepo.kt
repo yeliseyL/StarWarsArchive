@@ -6,11 +6,10 @@ import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 
 interface ISWItemsRepo {
-//    fun getItems(category: Categories): Single<SWItemResult>
-    fun getPeople(): Single<PeopleResult>
-    fun getPlanets(): Single<PlanetsResult>
-    fun getFilms(): Single<FilmsResult>
-    fun getSpecies(): Single<SpeciesResult>
-    fun getVehicles(): Single<VehiclesResult>
-    fun getStarships(): Single<StarshipsResult>
+    fun getPeople(currentPage: Int): Single<PeopleResult>
+    fun getPlanets(currentPage: Int): Single<PlanetsResult>
+    fun getFilms(currentPage: Int): Single<FilmsResult>
+    fun getSpecies(currentPage: Int): Single<SpeciesResult>
+    fun getVehicles(currentPage: Int): Single<VehiclesResult>
+    fun getStarships(currentPage: Int): Single<StarshipsResult>
 }

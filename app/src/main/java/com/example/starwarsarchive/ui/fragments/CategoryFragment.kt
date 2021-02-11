@@ -4,14 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.starwarsarchive.App
 import com.example.starwarsarchive.R
 import com.example.starwarsarchive.mvp.model.Categories
 import com.example.starwarsarchive.mvp.presenter.CategoryPresenter
 import com.example.starwarsarchive.mvp.view.CategoryView
 import com.example.starwarsarchive.ui.adapter.CategoryRVAdapter
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_category.*
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
@@ -48,6 +49,23 @@ class CategoryFragment : MvpAppCompatFragment(), CategoryView {
             App.instance.appComponent.inject(this)
         }
         rv_items.adapter = adapter
+        rv_items.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+
+                recyclerView.layoutManager?.let {
+
+                    val linearLayoutManager = it as LinearLayoutManager
+                    val totalItemCount = linearLayoutManager.itemCount
+                    val lastVisibleItem = linearLayoutManager.findLastVisibleItemPosition()
+
+                    if (!fetch_progress.isVisible && totalItemCount <= (lastVisibleItem + 1)) {
+                        presenter.loadNextPage()
+                    }
+                }
+                super.onScrolled(recyclerView, dx, dy)
+            }
+        })
     }
 
     override fun updateList() {

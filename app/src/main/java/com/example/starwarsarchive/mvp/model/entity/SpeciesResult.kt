@@ -8,7 +8,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 class SpeciesResult(
         @Expose override val count: Int,
-        @Expose override val next: String,
+        @Expose override val next: String?,
         @Expose override val previous: String?,
         @Expose override val results: List<Species>
 ) : Parcelable, ISWItemResult

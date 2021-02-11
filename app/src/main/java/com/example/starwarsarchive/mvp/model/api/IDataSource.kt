@@ -7,21 +7,21 @@ import retrofit2.http.Query
 
 interface IDataSource {
     @GET("people")
-    fun getPeople(): Single<PeopleResult>
+    fun getPeople(@Query("page") currentPage: Int): Single<PeopleResult>
 
     @GET("planets")
-    fun getPlanets(): Single<PlanetsResult>
+    fun getPlanets(@Query("page") currentPage: Int): Single<PlanetsResult>
 
     @GET("films")
-    fun getFilms(): Single<FilmsResult>
+    fun getFilms(@Query("page") currentPage: Int): Single<FilmsResult>
 
     @GET("species")
-    fun getSpecies(): Single<SpeciesResult>
+    fun getSpecies(@Query("page") currentPage: Int): Single<SpeciesResult>
 
     @GET("vehicles")
-    fun getVehicles(): Single<VehiclesResult>
+    fun getVehicles(@Query("page") currentPage: Int): Single<VehiclesResult>
 
     @GET("starships")
-    fun getStarships(): Single<StarshipsResult>
+    fun getStarships(@Query("page") currentPage: Int): Single<StarshipsResult>
 
 }

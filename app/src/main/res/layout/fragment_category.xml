@@ -6,6 +6,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_items"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="16dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        tools:context=".ui.CategoryFragment"
+        tools:listitem="@layout/item_item"/>
+
     <ProgressBar
         android:id="@+id/fetch_progress"
         android:layout_width="wrap_content"
@@ -17,16 +27,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/rv_items"
         app:layout_constraintTop_toTopOf="@+id/rv_items" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_items"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="16dp"
-        android:clipToPadding="false"
-        android:paddingBottom="16dp"
-        tools:context=".ui.CategoryFragment"
-        tools:listitem="@layout/item_item"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
