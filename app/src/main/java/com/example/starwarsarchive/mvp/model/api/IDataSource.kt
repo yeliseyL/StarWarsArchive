@@ -24,4 +24,23 @@ interface IDataSource {
     @GET("starships")
     fun getStarships(@Query("page") currentPage: Int): Single<StarshipsResult>
 
+
+    @GET("people")
+    fun searchPeople(@Query("search") name: String, @Query("page") page: Int): Single<PeopleResult>
+
+    @GET("planets")
+    fun searchPlanets(@Query("search") name: String, @Query("page") page: Int): Single<PlanetsResult>
+
+    @GET("films")
+    fun searchFilms(@Query("search") name: String, @Query("page") page: Int): Single<FilmsResult>
+
+    @GET("species")
+    fun searchSpecies(@Query("search") name: String, @Query("page") page: Int): Single<SpeciesResult>
+
+    @GET("vehicles")
+    fun searchVehicles(@Query("search") name: String, @Query("page") page: Int): Single<VehiclesResult>
+
+    @GET("starships")
+    fun searchStarships(@Query("search") name: String, @Query("page") page: Int): Single<StarshipsResult>
+
 }

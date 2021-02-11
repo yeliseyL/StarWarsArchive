@@ -6,15 +6,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/searchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter a name or a title"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_items"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="16dp"
+        android:layout_height="wrap_content"
         android:clipToPadding="false"
+        android:paddingTop="16dp"
         android:paddingBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchEditText"
         tools:context=".ui.CategoryFragment"
-        tools:listitem="@layout/item_item"/>
+        tools:listitem="@layout/item_item" />
 
     <ProgressBar
         android:id="@+id/fetch_progress"

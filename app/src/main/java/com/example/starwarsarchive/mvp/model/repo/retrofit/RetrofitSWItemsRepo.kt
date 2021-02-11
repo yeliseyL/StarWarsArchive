@@ -20,4 +20,17 @@ class RetrofitSWItemsRepo(val api: IDataSource) : ISWItemsRepo {
     override fun getVehicles(currentPage: Int): Single<VehiclesResult> = api.getVehicles(currentPage).subscribeOn(Schedulers.io())
 
     override fun getStarships(currentPage: Int): Single<StarshipsResult> = api.getStarships(currentPage).subscribeOn(Schedulers.io())
+
+
+    override fun searchPeople(name: String, page: Int): Single<PeopleResult> = api.searchPeople(name, page).subscribeOn(Schedulers.io())
+
+    override fun searchPlanets(name: String, page: Int): Single<PlanetsResult> = api.searchPlanets(name, page).subscribeOn(Schedulers.io())
+
+    override fun searchFilms(name: String, page: Int): Single<FilmsResult> = api.searchFilms(name, page).subscribeOn(Schedulers.io())
+
+    override fun searchSpecies(name: String, page: Int): Single<SpeciesResult> = api.searchSpecies(name, page).subscribeOn(Schedulers.io())
+
+    override fun searchVehicles(name: String, page: Int): Single<VehiclesResult> = api.searchVehicles(name, page).subscribeOn(Schedulers.io())
+
+    override fun searchStarships(name: String, page: Int): Single<StarshipsResult> = api.searchStarships(name, page).subscribeOn(Schedulers.io())
 }

@@ -10,4 +10,5 @@ interface CategoryView : MvpView {
     fun init()
     fun updateList()
     fun toggleProgress(inProgress: Boolean)
+    fun showError()
 }
