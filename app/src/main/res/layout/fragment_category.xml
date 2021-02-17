@@ -8,18 +8,19 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/image_layout_width"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/stars_bg" />
+        app:srcCompat="@drawable/stars_bg"
+        android:contentDescription="@string/main_background" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/searchEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter a name or a title"
+        android:hint="@string/enter_a_name_or_a_title"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,8 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
+        android:paddingTop="@dimen/padding_middle"
+        android:paddingBottom="@dimen/padding_middle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

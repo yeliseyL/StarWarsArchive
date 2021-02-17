@@ -8,18 +8,19 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/image_layout_width"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/stars_bg" />
+        app:srcCompat="@drawable/stars_bg"
+        android:contentDescription="@string/main_background" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/people_btn"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:text="People"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/people"
         android:theme="@style/AppTheme.Button"
         app:icon="@drawable/ic_people"
         app:iconGravity="start"
@@ -31,9 +32,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/planets_btn"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:text="Planets"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/planets"
         app:icon="@drawable/ic_planets"
         app:iconGravity="start"
         android:theme="@style/AppTheme.Button"
@@ -43,9 +44,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/films_btn"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:text="Films"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/films"
         app:icon="@drawable/ic_films"
         app:iconGravity="start"
         android:theme="@style/AppTheme.Button"
@@ -55,9 +56,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/species_btn"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:text="Species"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/species"
         app:icon="@drawable/ic_species"
         app:iconGravity="start"
         android:theme="@style/AppTheme.Button"
@@ -67,9 +68,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/vehicles_btn"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:text="Vehicles"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/vehicles"
         app:icon="@drawable/ic_vehicles"
         app:iconGravity="start"
         android:theme="@style/AppTheme.Button"
@@ -79,9 +80,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/starships_btn"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:text="Starships"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/starships"
         app:icon="@drawable/ic_starships"
         app:iconGravity="start"
         android:theme="@style/AppTheme.Button"

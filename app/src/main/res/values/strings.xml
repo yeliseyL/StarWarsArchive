@@ -2,4 +2,12 @@
     <string name="app_name">Star Wars Archive</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_a_name_or_a_title">Enter a name or a title</string>
+    <string name="main_background">Main background</string>
+    <string name="people">People</string>
+    <string name="planets">Planets</string>
+    <string name="films">Films</string>
+    <string name="species">Species</string>
+    <string name="vehicles">Vehicles</string>
+    <string name="starships">Starships</string>
 </resources>
