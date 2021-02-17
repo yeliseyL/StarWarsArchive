@@ -50,22 +50,12 @@ class CategoryFragment : MvpAppCompatFragment(), CategoryView {
     }
 
     override fun init() {
-
         setHasOptionsMenu(true)
+        setupSearchEditText()
+        initRecyclerView()
+    }
 
-        searchEditText.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                s?.let {
-                    presenter.loadSearchData(s.toString())
-                }
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-        })
-
-        searchEditText.setOnFocusChangeListener { view, b ->  if (!b) view.hideKeyboard()}
-
+    private fun initRecyclerView() {
         rv_items.layoutManager = LinearLayoutManager(context)
         adapter = CategoryRVAdapter(presenter.categoryListPresenter).apply {
             App.instance.appComponent.inject(this)
@@ -90,6 +80,21 @@ class CategoryFragment : MvpAppCompatFragment(), CategoryView {
                 super.onScrolled(recyclerView, dx, dy)
             }
         })
+    }
+
+    private fun setupSearchEditText() {
+        searchEditText.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                s?.let {
+                    presenter.loadSearchData(s.toString())
+                }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
+
+        searchEditText.setOnFocusChangeListener { view, b -> if (!b) view.hideKeyboard() }
     }
 
     override fun updateList() {
@@ -118,6 +123,10 @@ class CategoryFragment : MvpAppCompatFragment(), CategoryView {
                 inSearch = !inSearch
                 if (inSearch) searchEditText.visibility = View.VISIBLE
                 else searchEditText.visibility = View.GONE
+                true
+            }
+            android.R.id.home -> {
+                presenter.navigateBack()
                 true
             }
             else -> super.onOptionsItemSelected(item)

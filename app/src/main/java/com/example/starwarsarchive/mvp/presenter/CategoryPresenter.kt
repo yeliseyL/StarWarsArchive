@@ -71,6 +71,7 @@ class CategoryPresenter(private val category: Categories) : MvpPresenter<Categor
                 .subscribe({ items ->
                     categoryListPresenter.items.clear()
                     categoryListPresenter.items.addAll(items.results)
+                    if (items.next == null) hasNext = false
                     viewState.toggleProgress(false)
                     viewState.updateList()
                 }, {
@@ -80,30 +81,30 @@ class CategoryPresenter(private val category: Categories) : MvpPresenter<Categor
     }
 
     fun loadNextPage() {
-        when(category) {
-            Categories.PEOPLE -> nextPage { itemsRepo.getPeople(page) as Single<ISWItemResult> }
-            Categories.PLANETS -> nextPage { itemsRepo.getPlanets(page) as Single<ISWItemResult> }
-            Categories.STARSHIPS -> nextPage { itemsRepo.getStarships(page) as Single<ISWItemResult> }
-            Categories.SPECIES -> nextPage { itemsRepo.getSpecies(page) as Single<ISWItemResult> }
-            Categories.VEHICLES ->  nextPage { itemsRepo.getVehicles(page) as Single<ISWItemResult> }
-            Categories.FILMS -> nextPage { itemsRepo.getFilms(page) as Single<ISWItemResult> }
+        if (hasNext) {
+            when(category) {
+                Categories.PEOPLE -> nextPage { itemsRepo.getPeople(page) as Single<ISWItemResult> }
+                Categories.PLANETS -> nextPage { itemsRepo.getPlanets(page) as Single<ISWItemResult> }
+                Categories.STARSHIPS -> nextPage { itemsRepo.getStarships(page) as Single<ISWItemResult> }
+                Categories.SPECIES -> nextPage { itemsRepo.getSpecies(page) as Single<ISWItemResult> }
+                Categories.VEHICLES ->  nextPage { itemsRepo.getVehicles(page) as Single<ISWItemResult> }
+                Categories.FILMS -> nextPage { itemsRepo.getFilms(page) as Single<ISWItemResult> }
+            }
         }
     }
 
     private fun nextPage(getItem: (Int) -> Single<ISWItemResult>) {
-        if (hasNext) {
-            viewState.toggleProgress(true)
-            page++
-            getItem(page).observeOn(mainThreadScheduler)
-                    .subscribe({ items ->
-                        categoryListPresenter.items.addAll(items.results)
-                        if (items.next == null) hasNext = false
-                        viewState.toggleProgress(false)
-                        viewState.updateList()
-                    }, {
-                        viewState.showError()
-                    })
-        }
+        viewState.toggleProgress(true)
+        page++
+        getItem(page).observeOn(mainThreadScheduler)
+                .subscribe({ items ->
+                    categoryListPresenter.items.addAll(items.results)
+                    if (items.next == null) hasNext = false
+                    viewState.toggleProgress(false)
+                    viewState.updateList()
+                }, {
+                    viewState.showError()
+                })
     }
 
     fun loadSearchData(name: String) {
@@ -123,6 +124,7 @@ class CategoryPresenter(private val category: Categories) : MvpPresenter<Categor
                 .subscribe({ items ->
                     categoryListPresenter.items.clear()
                     categoryListPresenter.items.addAll(items.results)
+                    if (items.next == null) hasNext = false
                     viewState.toggleProgress(false)
                     viewState.updateList()
                 }, {
@@ -132,31 +134,33 @@ class CategoryPresenter(private val category: Categories) : MvpPresenter<Categor
     }
 
     fun loadNextSearchPage() {
-        when(category) {
-            Categories.PEOPLE -> nextSearchPage { _: String, page: Int -> itemsRepo.searchPeople(searchName, page) as Single<ISWItemResult> }
-            Categories.PLANETS -> nextSearchPage { _: String, page: Int -> itemsRepo.searchPlanets(searchName, page) as Single<ISWItemResult> }
-            Categories.STARSHIPS -> nextSearchPage { _: String, page: Int -> itemsRepo.searchStarships(searchName, page) as Single<ISWItemResult> }
-            Categories.SPECIES -> nextSearchPage { _: String, page: Int -> itemsRepo.searchSpecies(searchName, page) as Single<ISWItemResult> }
-            Categories.VEHICLES ->  nextSearchPage { _: String, page: Int -> itemsRepo.searchVehicles(searchName, page) as Single<ISWItemResult> }
-            Categories.FILMS -> nextSearchPage { _: String, page: Int -> itemsRepo.searchFilms(searchName, page) as Single<ISWItemResult> }
+        if (hasNext) {
+            when (category) {
+                Categories.PEOPLE -> nextSearchPage { _: String, page: Int -> itemsRepo.searchPeople(searchName, page) as Single<ISWItemResult> }
+                Categories.PLANETS -> nextSearchPage { _: String, page: Int -> itemsRepo.searchPlanets(searchName, page) as Single<ISWItemResult> }
+                Categories.STARSHIPS -> nextSearchPage { _: String, page: Int -> itemsRepo.searchStarships(searchName, page) as Single<ISWItemResult> }
+                Categories.SPECIES -> nextSearchPage { _: String, page: Int -> itemsRepo.searchSpecies(searchName, page) as Single<ISWItemResult> }
+                Categories.VEHICLES -> nextSearchPage { _: String, page: Int -> itemsRepo.searchVehicles(searchName, page) as Single<ISWItemResult> }
+                Categories.FILMS -> nextSearchPage { _: String, page: Int -> itemsRepo.searchFilms(searchName, page) as Single<ISWItemResult> }
+            }
         }
     }
 
     private fun nextSearchPage(searchItem: (String, Int) -> Single<ISWItemResult>) {
-        if (hasNext) {
-            viewState.toggleProgress(true)
-            page++
-            searchItem(searchName, page).observeOn(mainThreadScheduler)
-                    .subscribe({ items ->
-                        categoryListPresenter.items.addAll(items.results)
-                        if (items.next == null) hasNext = false
-                        viewState.toggleProgress(false)
-                        viewState.updateList()
-                    }, {
-                        viewState.showError()
-                    })
-        }
+        viewState.toggleProgress(true)
+        page++
+        searchItem(searchName, page).observeOn(mainThreadScheduler)
+                .subscribe({ items ->
+                    categoryListPresenter.items.addAll(items.results)
+                    if (items.next == null) hasNext = false
+                    viewState.toggleProgress(false)
+                    viewState.updateList()
+                }, {
+                    viewState.showError()
+                })
     }
 
-
+    fun navigateBack() {
+        router.exit()
+    }
 }

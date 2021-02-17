@@ -39,17 +39,4 @@ class MainFragment : MvpAppCompatFragment(), MainFragmentView {
         vehicles_btn.setOnClickListener { presenter.navigateToCategory(Categories.VEHICLES) }
         starships_btn.setOnClickListener { presenter.navigateToCategory(Categories.STARSHIPS) }
     }
-
-
-
-//    override fun onClick(v: View?) {
-//        when(v) {
-//            people_btn -> Toast.makeText(context, "Clicked 1", Toast.LENGTH_SHORT).show()
-//            planets_btn -> presenter.navigateToCategory()
-//            films_btn -> presenter.navigateToCategory()
-//            species_btn -> presenter.navigateToCategory()
-//            vehicles_btn -> presenter.navigateToCategory()
-//            starships_btn -> presenter.navigateToCategory()
-//        }
-//    }
 }

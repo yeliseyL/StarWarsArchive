@@ -37,7 +37,7 @@ class Planets(
                 "\n" +
                 "Rotation period: $rotation_period\n" +
                 "\n" +
-                "Surface_water: $surface_water\n" +
+                "Surface water: $surface_water\n" +
                 "\n" +
                 "Terrain: $terrain\n"
 }

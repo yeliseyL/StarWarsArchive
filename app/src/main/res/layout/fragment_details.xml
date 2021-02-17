@@ -18,41 +18,46 @@
         app:srcCompat="@drawable/stars_bg"
         android:contentDescription="@string/main_background" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/padding_small"
-        android:backgroundTint="@color/black_btn"
-        android:clickable="true"
-        android:elevation="@dimen/card_elevation"
-        android:focusable="true"
-        android:thicknessRatio="2"
-        app:cardCornerRadius="@dimen/corner_radius"
-        app:cardPreventCornerOverlap="true"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:strokeColor="@color/font_color_btn"
-        app:strokeWidth="@dimen/strole_width">
-
-        <LinearLayout
+        android:layout_height="match_parent">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_margin="@dimen/padding_small"
+            android:backgroundTint="@color/black_btn"
+            android:clickable="true"
+            android:elevation="@dimen/card_elevation"
+            android:focusable="true"
+            android:thicknessRatio="2"
+            app:cardCornerRadius="@dimen/corner_radius"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:strokeColor="@color/font_color_btn"
+            app:strokeWidth="@dimen/strole_width">
 
-            <TextView
-                android:id="@+id/details_text"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="@dimen/padding_middle"
-                android:layout_marginBottom="@dimen/padding_middle"
-                android:text="@string/hello_blank_fragment"
-                android:textColor="@color/font_color_btn"
-                android:textSize="@dimen/text_size" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/details_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/padding_middle"
+                    android:layout_marginBottom="@dimen/padding_middle"
+                    android:text="@string/hello_blank_fragment"
+                    android:textColor="@color/font_color_btn"
+                    android:textSize="@dimen/text_size" />
 
-    </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

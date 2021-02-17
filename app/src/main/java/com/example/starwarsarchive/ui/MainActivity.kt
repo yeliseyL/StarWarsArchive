@@ -26,7 +26,6 @@ class MainActivity : MvpAppCompatActivity(), MainView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         App.instance.appComponent.inject(this)
     }
 
@@ -39,14 +38,4 @@ class MainActivity : MvpAppCompatActivity(), MainView {
         super.onPause()
         navigatorHolder.removeNavigator()
     }
-
-//    override fun onBackPressed() {
-//        supportFragmentManager.fragments.forEach {
-//            if(it is BackButtonListener && it.backPressed()){
-//                return
-//            }
-//        }
-//
-//        presenter.backClicked()
-//    }
 }
