@@ -25,13 +25,22 @@ class Species(
 ): Parcelable, ISWItem {
         override fun toString() =
                 "Name: $name\n" +
+                "\n" +
                 "Average height: $average_height\n" +
+                "\n" +
                 "Average lifespan: $average_lifespan\n" +
+                "\n" +
                 "Classification: $classification\n" +
+                "\n" +
                 "Designation: $designation\n" +
+                "\n" +
                 "Eye colors: $eye_colors\n" +
+                "\n" +
                 "Hair colors: $hair_colors\n" +
+                "\n" +
                 "Homeworld: $homeworld\n" +
+                "\n" +
                 "Language: $language\n" +
+                "\n" +
                 "Skin colors: $skin_colors\n"
 }

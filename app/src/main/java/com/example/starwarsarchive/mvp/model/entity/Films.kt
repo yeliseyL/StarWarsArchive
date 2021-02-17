@@ -27,8 +27,12 @@ class Films(
 
         override fun toString() =
                 "Title: $name\n" +
+                "\n" +
                 "Release date: $release_date\n" +
+                "\n" +
                 "Director: $director\n" +
+                "\n" +
                 "Producer: $producer\n" +
+                "\n" +
                 "Opening crawl: $opening_crawl\n"
 }

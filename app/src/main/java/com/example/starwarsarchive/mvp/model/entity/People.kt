@@ -26,11 +26,18 @@ class People(
 ) : Parcelable, ISWItem {
         override fun toString() =
                 "Name: $name\n" +
+                "\n" +
                 "Birth year: $birth_year\n" +
+                "\n" +
                 "Eye color: $eye_color\n" +
+                "\n" +
                 "Gender: $gender\n" +
+                "\n" +
                 "Hair color: $hair_color\n" +
+                "\n" +
                 "Height: $height\n" +
+                "\n" +
                 "Mass: $mass\n" +
+                "\n" +
                 "Skin color: $skin_color\n"
 }

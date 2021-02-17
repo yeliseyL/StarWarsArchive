@@ -28,16 +28,28 @@ class Starships(
 ): Parcelable, ISWItem {
         override fun toString() =
                 "Name: $name\n" +
+                "\n" +
                 "Model: $model\n" +
+                "\n" +
                 "MGLT: $MGLT\n" +
+                "\n" +
                 "Cargo capacity: $cargo_capacity\n" +
+                "\n" +
                 "Consumables: $consumables\n" +
+                "\n" +
                 "Cost in credits: $cost_in_credits\n" +
+                "\n" +
                 "Crew: $crew\n" +
+                "\n" +
                 "Hyperdrive rating: $hyperdrive_rating\n" +
+                "\n" +
                 "Length: $length\n" +
+                "\n" +
                 "Manufacturer: $manufacturer\n" +
+                "\n" +
                 "Max atmosphering speed: $max_atmosphering_speed\n" +
+                "\n" +
                 "Passengers: $passengers\n" +
+                "\n" +
                 "Starship class: $starship_class\n"
 }

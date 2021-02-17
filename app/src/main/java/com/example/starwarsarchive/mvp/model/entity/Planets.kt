@@ -24,12 +24,20 @@ class Planets(
 ) : Parcelable, ISWItem {
         override fun toString() =
                 "Name: $name\n" +
+                "\n" +
                 "Climate: $climate\n" +
+                "\n" +
                 "Diameter: $diameter\n" +
+                "\n" +
                 "Gravity: $gravity\n" +
+                "\n" +
                 "Orbital period: $orbital_period\n" +
+                "\n" +
                 "Population: $population\n" +
+                "\n" +
                 "Rotation period: $rotation_period\n" +
+                "\n" +
                 "Surface_water: $surface_water\n" +
+                "\n" +
                 "Terrain: $terrain\n"
 }
