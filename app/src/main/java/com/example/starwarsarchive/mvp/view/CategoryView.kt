@@ -1,5 +1,6 @@
 package com.example.starwarsarchive.mvp.view
 
+import com.example.starwarsarchive.mvp.model.Categories
 import moxy.MvpView
 import moxy.viewstate.strategy.AddToEndStrategy
 import moxy.viewstate.strategy.StateStrategyType
