@@ -16,29 +16,44 @@
         app:srcCompat="@drawable/stars_bg"
         android:contentDescription="@string/main_background" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/searchEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/enter_a_name_or_a_title"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_items"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:clipToPadding="false"
         android:paddingTop="@dimen/padding_middle"
         android:paddingBottom="@dimen/padding_middle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchEditText"
+        app:layout_constraintTop_toBottomOf="@+id/searchEditTextLayout"
         tools:context=".ui.CategoryFragment"
         tools:listitem="@layout/item_item" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/searchEditTextLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="@color/black_btn"
+        app:boxStrokeColor="@color/font_color_btn"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/black_btn"
+            android:hint="@string/enter_a_name_or_a_title"
+            android:textColor="@color/font_color_btn"
+            android:textColorHint="@color/white"
+            android:autofillHints=""
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <ProgressBar
         android:id="@+id/fetch_progress"

@@ -121,8 +121,8 @@ class CategoryFragment : MvpAppCompatFragment(), CategoryView {
         return when (item.itemId) {
             R.id.action_search -> {
                 inSearch = !inSearch
-                if (inSearch) searchEditText.visibility = View.VISIBLE
-                else searchEditText.visibility = View.GONE
+                if (inSearch) searchEditTextLayout.visibility = View.VISIBLE
+                else searchEditTextLayout.visibility = View.GONE
                 true
             }
             android.R.id.home -> {
